@@ -1,0 +1,19 @@
+SECURE CODING REVIEW REPORT
+
+Language: Python
+Application: Simple Login Program
+
+I selected a basic Python login program for this task.
+Initially, the password was checked directly in the code which is not secure.
+
+Security Issue:
+The password was handled in plain text, which can be easily seen
+by anyone who has access to the source code.
+
+Improvement:
+To improve security, I used password hashing using the hashlib module.
+This prevents the password from being checked directly.
+
+Learning:
+This task helped me understand basic secure coding practices
+and why protecting passwords is important.
