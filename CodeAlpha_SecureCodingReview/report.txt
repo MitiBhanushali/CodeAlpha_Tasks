@@ -1,19 +1,50 @@
 SECURE CODING REVIEW REPORT
 
-Language: Python
-Application: Simple Login Program
+Language: Python  
+Application: Simple Login Program  
 
-I selected a basic Python login program for this task.
-Initially, the password was checked directly in the code which is not secure.
+Project Overview:
+This report documents a secure coding review of a simple Python
+login program as part of the CodeAlpha Cyber Security Internship.
 
-Security Issue:
-The password was handled in plain text, which can be easily seen
-by anyone who has access to the source code.
+The initial version of the program contained insecure coding practices
+that could expose sensitive information.
 
-Improvement:
-To improve security, I used password hashing using the hashlib module.
-This prevents the password from being checked directly.
+Insecure Code (Before Secure Coding Review):
 
-Learning:
-This task helped me understand basic secure coding practices
-and why protecting passwords is important.
+The following code represents the original implementation of the login
+program. It contains security issues such as hardcoded credentials.
+
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == "admin" and password == "admin123":
+    print("Login successful!")
+else:
+    print("Invalid credentials")
+
+Security Issues Identified:
+- Username and password were hardcoded in the source code
+- Password was handled in plain text
+- No input validation or secure authentication method was used
+- Not suitable for real-world applications
+
+Secure Version (After Review):
+
+After reviewing the code, secure coding practices were applied.
+Hardcoded credentials were removed and password hashing was used
+to avoid storing or comparing passwords in plain text.
+
+The hashlib module was used to hash the password before comparison,
+making the authentication process more secure.
+
+Improvements Made:
+- Removed hardcoded username and password
+- Applied password hashing using the hashlib module
+- Improved code structure and readability
+
+Learning Outcome:
+This task helped me understand the importance of secure coding practices,
+especially in authentication systems. I learned how insecure handling
+of passwords can lead to security risks and how hashing helps protect
+sensitive data.
